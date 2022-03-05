@@ -106,15 +106,15 @@ def _create_stats(coin_data: CoinData,
     d7_price_low = d7_ohlcv.price_low / d7_ohlcv.volume_traded
     d7_price_high = d7_ohlcv.price_high / d7_ohlcv.volume_traded
     return Stats(
-        price=price,
-        market_cap=market_cap,
-        fully_diluted_market_cap=fully_diluted_market_cap,
-        trading_volume=h24_ohlcv.volume_traded,
-        h24_price_low=h24_price_low,
-        h24_price_high=h24_price_high,
-        d7_price_low=d7_price_low,
-        d7_price_high=d7_price_high,
-        percentages=Percentages(
+        price,
+        market_cap,
+        fully_diluted_market_cap,
+        h24_ohlcv.volume_traded,
+        h24_price_low,
+        h24_price_high,
+        d7_price_low,
+        d7_price_high,
+        Percentages(
             h1=h1_ohlcv.price_increase(),
             h24=h24_ohlcv.price_increase(),
             d7=d7_ohlcv.price_increase(),
